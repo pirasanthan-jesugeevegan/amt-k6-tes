@@ -1,0 +1,22 @@
+{
+  "name": "amt-k6-tes",
+  "version": "1.0.0",
+  "description": "Load testing on Tes.com with K6.io",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirasanthan-jesugeevegan/amt-k6-tes.git"
+  },
+  "keywords": [
+    "k6.io"
+  ],
+  "author": "Pirasanthan Jesugeevegan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pirasanthan-jesugeevegan/amt-k6-tes/issues"
+  },
+  "homepage": "https://github.com/pirasanthan-jesugeevegan/amt-k6-tes#readme"
+}
