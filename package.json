@@ -4,7 +4,11 @@
   "description": "Load testing on Tes.com with K6.io",
   "main": "script.js",
   "scripts": {
-    "test": "k6 run src/simulations/Login.test.js"
+    "pretest": "",
+    "LoginTest": "webpack && k6 run dist/Login.test.js",
+    "docker:LoginTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/Login.test.js",
+    "docker:up": "docker-compose up -d influxdb grafana",
+    "docker:down": "docker-compose down -v"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,18 @@
   "bugs": {
     "url": "https://github.com/pirasanthan-jesugeevegan/amt-k6-tes/issues"
   },
-  "homepage": "https://github.com/pirasanthan-jesugeevegan/amt-k6-tes#readme"
+  "homepage": "https://github.com/pirasanthan-jesugeevegan/amt-k6-tes#readme",
+  "devDependencies": {
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "casual": "^1.6.2",
+    "core-js": "^3.16.3",
+    "faker": "^5.5.3",
+    "k6": "^0.0.0",
+    "webpack": "^5.51.1"
+  }
 }
