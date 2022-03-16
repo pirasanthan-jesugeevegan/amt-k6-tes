@@ -4,7 +4,7 @@
   "description": "Load testing on Tes.com with K6.io",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "k6 run src/simulations/Login.test.js"
   },
   "repository": {
     "type": "git",
