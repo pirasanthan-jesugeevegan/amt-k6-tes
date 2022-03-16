@@ -1,11 +1,15 @@
+var glob = require('glob');
+var path = require('path');
+
 module.exports = {
   mode: 'production',
-  entry: {
-    Login: './src/simulations/Login.test.js',
-  },
+  entry: glob.sync('./src/simulations/**.js').reduce(function (obj, el) {
+    obj[path.parse(el).name] = el;
+    return obj;
+  }, {}),
   output: {
     path: __dirname + '/dist',
-    filename: '[name].test.js',
+    filename: '[name].js',
     libraryTarget: 'commonjs',
   },
   module: {
