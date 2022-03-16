@@ -1,6 +1,6 @@
 import { check } from 'k6';
 import http from 'k6/http';
-
+import Utils from '../utils/utils.js';
 export default class Login {
   constructor() {
     this.params = {
@@ -22,7 +22,7 @@ export default class Login {
       password: `${__ENV.USER_PASSWORD}`,
     });
     let response = http.post(
-      `https://www.tes.com/api/authn/sign-in-redirect`,
+      `${Utils.getBaseUrl()}/api/authn/sign-in-redirect`,
       payload,
       this.params
     );
